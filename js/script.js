@@ -25,7 +25,7 @@ let tentativas = 0;
 
 function resultado(input) {
     if (game.isWon(input)) {
-         alert("Uhul");
+         alert("Parabéns, você ganhou!");
          setTimeout(() => {restart()}, 1000)}
     else if (game.isLost(input, tentativas)){
         alert (`Fim de linha, a palavra era ${game.getWord().join("")}`);
