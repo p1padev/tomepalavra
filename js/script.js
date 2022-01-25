@@ -1,6 +1,6 @@
 // Carregar jogo
 
-const game = new Game(arrayDePalavras)
+const game = new Game(arrayDePalavras);
 
 // DOM
 
@@ -16,181 +16,95 @@ const btnTestar3 = document.getElementById('botaoTeste3');
 const btnTestar4 = document.getElementById('botaoTeste4');
 const btnTestar5 = document.getElementById('botaoTeste5');
 const btnTestar6 = document.getElementById('botaoTeste6');
-const primeiroSpan = document.getElementsByName('letter1');
-const segundoSpan = document.getElementsByName('letter2');
-const terceiroSpan = document.getElementsByName('letter3');
-const quartoSpan = document.getElementsByName('letter4');
-const quintoSpan = document.getElementsByName('letter5');
-const sextoSpan = document.getElementsByName('letter6');
-let arrayGuess = [];
+
+// Acompanhar o número de tentativas para checar o resultado
+
 let tentativas = 0;
 
-
-// Funções de resultado
+// Funções do jogo
 
 function resultado(input) {
     if (game.isWon(input)) {
          alert("Uhul");
-         setTimeout(() => {restart()}, 2000)}
+         setTimeout(() => {restart()}, 1000)}
     else if (game.isLost(input, tentativas)){
         alert (`Fim de linha, a palavra era ${game.getWord().join("")}`);
-        setTimeout(() => {restart()}, 2000)}
+        setTimeout(() => {restart()}, 1000)}
     else {
         alert ("Hoje não"); tentativas ++}
 }
-
-// Reiniciar
 
 function restart(){
     location.reload();
     return false;
 }
 
-// Iniciar
+game.init();
 
-game.init()
+console.log(game.getWord());
 
-console.log(game.getWord())
+// Função de puxar o input, testar, mudar as cores, travar a row
 
+function puxar (id){
+    let span = document.getElementsByName(`${id}`); // Informo através da classe do botão o Id para puxar os inputs;
+    let arrayGuess = [];
+
+    span.forEach((currentElement) => {arrayGuess.push(currentElement.value)}); // Passa para o array cada letra;
+
+    let cores = game.procurarPalavra(arrayGuess); // Compara no game.js a palavra e informa o retorno visual;
+
+    for (let i = 0; i < span.length; i++){ // Mudanças visuais
+        span[i].setAttribute("disabled", "disabled");
+        span[i].setAttribute("style", `background-color: ${cores[i]}`);
+    }
+    resultado (arrayGuess) // Checar vitória
+}
 
 // Botões
 
 btnTestar1.addEventListener('click', () => {
-
-    // Sobe o guess para o Array;
-    arrayGuess = [];
-    primeiroSpan.forEach((currentElement) => {arrayGuess.push(currentElement.value)});
-
-    // Desligar botão e chamar a próxima fila
-    btnTestar1.setAttribute("class", "no-show");
-    div2.classList.toggle ("no-show")
-    
-    let cores = game.procurarPalavra(arrayGuess);
-
-    // Trava a row atual 
-    for (let i = 0; i < primeiroSpan.length; i++){
-        primeiroSpan[i].setAttribute("disabled", "disabled");
-        primeiroSpan[i].setAttribute("style", `background-color: ${cores[i]}`);
-    }
-    
-    resultado(arrayGuess);
+    puxar (event.target.classList[0]); // Função mestre
+    btnTestar1.setAttribute("class", "no-show"); // Desligar botão e chamar a próxima fila
+    div2.classList.toggle ("no-show");
 })
 
 btnTestar2.addEventListener('click', () => {
-
-    // Sobe o guess para o Array;
-    arrayGuess = [];
-    segundoSpan.forEach((currentElement) => {arrayGuess.push(currentElement.value)});
-
-    // Desligar botão e chamar a próxima fila
+    puxar (event.target.classList[0]);
     btnTestar2.setAttribute("class", "no-show");
-    div3.classList.toggle ("no-show")
-    
-    let cores = game.procurarPalavra(arrayGuess);
-
-    // Trava a row atual 
-    for (let i = 0; i < segundoSpan.length; i++){
-        segundoSpan[i].setAttribute("disabled", "disabled");
-        segundoSpan[i].setAttribute("style", `background-color: ${cores[i]}`);
-    }
-    
-    resultado(arrayGuess);
+    div3.classList.toggle ("no-show");
 })
 
 btnTestar3.addEventListener('click', () => {
-
-    // Sobe o guess para o Array;
-    arrayGuess = [];
-    terceiroSpan.forEach((currentElement) => {arrayGuess.push(currentElement.value)});
-
-    // Desligar botão e chamar a próxima fila
+    puxar (event.target.classList[0]);
     btnTestar3.setAttribute("class", "no-show");
-    div4.classList.toggle ("no-show")
-    
-    let cores = game.procurarPalavra(arrayGuess);
-
-    // Trava a row atual 
-    for (let i = 0; i < terceiroSpan.length; i++){
-        terceiroSpan[i].setAttribute("disabled", "disabled");
-        terceiroSpan[i].setAttribute("style", `background-color: ${cores[i]}`);
-    }
-    
-    resultado(arrayGuess);
+    div4.classList.toggle ("no-show");
 })
 
 btnTestar4.addEventListener('click', () => {
-
-    // Sobe o guess para o Array;
-    arrayGuess = [];
-    quartoSpan.forEach((currentElement) => {arrayGuess.push(currentElement.value)});
-
-    // Desligar botão e chamar a próxima fila
+    puxar (event.target.classList[0]);
     btnTestar4.setAttribute("class", "no-show");
-    div5.classList.toggle ("no-show")
-    
-    let cores = game.procurarPalavra(arrayGuess);
-
-    // Trava a row atual 
-    for (let i = 0; i < quartoSpan.length; i++){
-        quartoSpan[i].setAttribute("disabled", "disabled");
-        quartoSpan[i].setAttribute("style", `background-color: ${cores[i]}`);
-    }
-    
-    resultado(arrayGuess);
+    div5.classList.toggle ("no-show");
 })
 
 btnTestar5.addEventListener('click', () => {
-
-    // Sobe o guess para o Array;
-    arrayGuess = [];
-    quintoSpan.forEach((currentElement) => {arrayGuess.push(currentElement.value)});
-
-    // Desligar botão e chamar a próxima fila
+    puxar (event.target.classList[0]);
     btnTestar5.setAttribute("class", "no-show");
-    div6.classList.toggle ("no-show")
-    
-    let cores = game.procurarPalavra(arrayGuess);
-
-    // Trava a row atual 
-    for (let i = 0; i < quintoSpan.length; i++){
-        quintoSpan[i].setAttribute("disabled", "disabled");
-        quintoSpan[i].setAttribute("style", `background-color: ${cores[i]}`);
-    }
-    
-    resultado(arrayGuess);
+    div6.classList.toggle ("no-show");
 })
 
 btnTestar6.addEventListener('click', () => {
-
-    // Sobe o guess para o Array;
-    arrayGuess = [];
-    sextoSpan.forEach((currentElement) => {arrayGuess.push(currentElement.value)});
-
-    // Desligar botão e chamar a próxima fila
+    puxar (event.target.classList[0]);
     btnTestar5.setAttribute("class", "no-show");
-    div6.classList.toggle ("no-show")
-    
-    let cores = game.procurarPalavra(arrayGuess);
-
-    // Trava a row atual 
-    for (let i = 0; i < sextoSpan.length; i++){
-        sextoSpan[i].setAttribute("disabled", "disabled");
-        sextoSpan[i].setAttribute("style", `background-color: ${cores[i]}`);
-    }
-    
-    resultado(arrayGuess);
+    div6.classList.toggle ("no-show");
 })
 
 // Função - Só permitir letras + Focus
 
 function validate(arg) {
     let element = document.getElementById(arg);
-    element.value = element.value.replace(/[^A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ]+/, '')
-
-  
-
+    element.value = element.value.replace(/[^A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ]+/, '');
     if (element.value.length == 1){
         element.nextElementSibling.focus();
     }
-  };
+  }
 
