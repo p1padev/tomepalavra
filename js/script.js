@@ -33,7 +33,7 @@ function resultado(input) {
          alert("Uhul");
          setTimeout(() => {restart()}, 2000)}
     else if (game.isLost(input, tentativas)){
-        alert ("Fim de linha");
+        alert (`Fim de linha, a palavra era ${game.getWord()}`);
         setTimeout(() => {restart()}, 2000)}
     else {
         alert ("Hoje não"); tentativas ++}
