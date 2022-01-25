@@ -65,36 +65,41 @@ function puxar (id){
 btnTestar1.addEventListener('click', () => {
     puxar (event.target.classList[0]); // Função mestre
     btnTestar1.setAttribute("class", "no-show"); // Desligar botão e chamar a próxima fila
+    btnTestar2.classList.toggle ("no-show")
     div2.classList.toggle ("no-show");
 })
 
 btnTestar2.addEventListener('click', () => {
     puxar (event.target.classList[0]);
     btnTestar2.setAttribute("class", "no-show");
+    btnTestar3.classList.toggle ("no-show")
     div3.classList.toggle ("no-show");
 })
 
 btnTestar3.addEventListener('click', () => {
     puxar (event.target.classList[0]);
     btnTestar3.setAttribute("class", "no-show");
+    btnTestar4.classList.toggle ("no-show")
     div4.classList.toggle ("no-show");
 })
 
 btnTestar4.addEventListener('click', () => {
     puxar (event.target.classList[0]);
     btnTestar4.setAttribute("class", "no-show");
+    btnTestar5.classList.toggle ("no-show");
     div5.classList.toggle ("no-show");
 })
 
 btnTestar5.addEventListener('click', () => {
     puxar (event.target.classList[0]);
     btnTestar5.setAttribute("class", "no-show");
+    btnTestar6.classList.toggle ("no-show")
     div6.classList.toggle ("no-show");
 })
 
 btnTestar6.addEventListener('click', () => {
     puxar (event.target.classList[0]);
-    btnTestar5.setAttribute("class", "no-show");
+    btnTestar6.setAttribute("class", "no-show");
     div6.classList.toggle ("no-show");
 })
 
