@@ -23,7 +23,7 @@ class Game {
     }
 
     isLost (input){
-      return tentativas === 5 && !game.isWon(input)
+      return tentativas === 6 && !game.isWon(input)
     }
 
     procurarPalavra (input) {

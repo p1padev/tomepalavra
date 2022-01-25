@@ -32,10 +32,10 @@ header {
 header::after{
         content: "";
         display: block;
-        border-bottom: dotted #3D405B 5px;
+        border-bottom: solid #3D405B 3px;
         width: 100%;
         position: relative;
-        bottom: -40px; /* your padding + border-width */
+        bottom: -30px; /* your padding + border-width */
 }
 
 .grid{
@@ -76,6 +76,10 @@ header::after{
 .no-show{
     display: none;
     
+}
+
+.buttons {
+    margin-top: 30px;
 }
 
 

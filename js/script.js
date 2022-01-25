@@ -30,8 +30,7 @@ function resultado(input) {
     else if (game.isLost(input, tentativas)){
         alert (`Fim de linha, a palavra era ${game.getWord().join("")}`);
         setTimeout(() => {restart()}, 1000)}
-    else {
-        alert ("Hoje não"); tentativas ++}
+    else {tentativas ++}
 }
 
 function restart(){
@@ -48,8 +47,11 @@ console.log(game.getWord());
 function puxar (id){
     let span = document.getElementsByName(`${id}`); // Informo através da classe do botão o Id para puxar os inputs;
     let arrayGuess = [];
+    arrayGuess = [];
 
     span.forEach((currentElement) => {arrayGuess.push(currentElement.value)}); // Passa para o array cada letra;
+
+    if (checar(arrayGuess) === true){
 
     let cores = game.procurarPalavra(arrayGuess); // Compara no game.js a palavra e informa o retorno visual;
 
@@ -58,49 +60,69 @@ function puxar (id){
         span[i].setAttribute("style", `background-color: ${cores[i]}`);
     }
     resultado (arrayGuess) // Checar vitória
+    return true} 
+
+    else {return false}
+
 }
+
+function checar(arrayGuess){
+        for (let i=0; i < arrayGuess.length; i++){
+            if(arrayGuess[i] === "")   
+               return false;
+        }
+        return true;
+     }
+
 
 // Botões
 
-btnTestar1.addEventListener('click', () => {
-    puxar (event.target.classList[0]); // Função mestre
+btnTestar1.addEventListener('click', (event) => {
+    if (puxar (event.target.classList[0]) === true){ // Função mestre
     btnTestar1.setAttribute("class", "no-show"); // Desligar botão e chamar a próxima fila
     btnTestar2.classList.toggle ("no-show")
-    div2.classList.toggle ("no-show");
+    div2.classList.toggle ("no-show");}
+    else alert ("Erro - preencha todas as letras")
 })
 
-btnTestar2.addEventListener('click', () => {
-    puxar (event.target.classList[0]);
+btnTestar2.addEventListener('click', (event) => {
+    if (puxar (event.target.classList[0]) === true){
     btnTestar2.setAttribute("class", "no-show");
     btnTestar3.classList.toggle ("no-show")
-    div3.classList.toggle ("no-show");
+    div3.classList.toggle ("no-show");}
+    else alert ("Erro - preencha todas as letras")
 })
 
-btnTestar3.addEventListener('click', () => {
+btnTestar3.addEventListener('click', (event) => {
+    if (puxar (event.target.classList[0]) === true){
     puxar (event.target.classList[0]);
     btnTestar3.setAttribute("class", "no-show");
     btnTestar4.classList.toggle ("no-show")
-    div4.classList.toggle ("no-show");
+    div4.classList.toggle ("no-show")}
+    else alert ("Erro - preencha todas as letras")
 })
 
-btnTestar4.addEventListener('click', () => {
-    puxar (event.target.classList[0]);
+btnTestar4.addEventListener('click', (event) => {
+    if (puxar (event.target.classList[0]) === true){
     btnTestar4.setAttribute("class", "no-show");
     btnTestar5.classList.toggle ("no-show");
-    div5.classList.toggle ("no-show");
+    div5.classList.toggle ("no-show");}
+    else alert ("Erro - preencha todas as letras")
 })
 
-btnTestar5.addEventListener('click', () => {
-    puxar (event.target.classList[0]);
+btnTestar5.addEventListener('click', (event) => {
+    if (puxar (event.target.classList[0]) === true){
     btnTestar5.setAttribute("class", "no-show");
     btnTestar6.classList.toggle ("no-show")
-    div6.classList.toggle ("no-show");
+    div6.classList.toggle ("no-show");}
+    else alert ("Erro - preencha todas as letras")
 })
 
-btnTestar6.addEventListener('click', () => {
-    puxar (event.target.classList[0]);
+btnTestar6.addEventListener('click', (event) => {
+    if (puxar (event.target.classList[0]) === true){
     btnTestar6.setAttribute("class", "no-show");
-    div6.classList.toggle ("no-show");
+    div6.classList.toggle ("no-show");}
+    else alert ("Erro - preencha todas as letras")
 })
 
 // Função - Só permitir letras + Focus
@@ -112,4 +134,16 @@ function validate(arg) {
         element.nextElementSibling.focus();
     }
   }
+
+// Habilitar o enter
+
+document.addEventListener('keydown', (event) =>{
+    let botaovisivel = Array.from(document.getElementsByTagName('button')).filter(style =>
+        window.getComputedStyle(style).getPropertyValue('display') != 'none');
+        
+    if (event.key === 'Enter') {
+      // Trigger the button element with a click
+      botaovisivel[0].click();
+    }
+  });
 
