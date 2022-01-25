@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+*{
+    background-color: #F4F1DE;
+    font-family: Overpass;
+}
+
+body{
+    background-color: #F4F1DE;
+    font-family: Overpass;
+}
+
+.game-container {
+    height: 1000px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+header {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #E07A5F;
+    height: 50px;
+    width: 100%;
+}
+
+header::after{
+        content: "";
+        display: block;
+        border-bottom: dotted #3D405B 5px;
+        width: 100%;
+        position: relative;
+        bottom: -40px; /* your padding + border-width */
+}
+
+.grid{
+    display: grid;
+}
+
+.nav-bar-title {
+    font-weight: 700;
+    font-size: 36px;
+    position: absolute;
+    text-align: center;
+}
+
+.board-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 600px;
+}
+
+.game-row {
+    text-align: center;
+}
+
+.game-row input {
+    background-color: rgba(255, 255, 255, 0.7);
+    border: 10px;
+    text-align: center;
+    text-transform:uppercase;
+    height: 50px;
+    width: 50px;
+    border: 1px solid black;
+    margin: 10px;
+    font-weight: 700;
+}
+
+.no-show{
+    display: none;
+    
+}
+
+
+
+
