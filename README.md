@@ -8,7 +8,7 @@
 # PT
 ## Sobre o projeto
 
-Tome palavra! foi concebido como primeiro projeto para o bootcamp em Web Development da Ironhack/BR. A ideia de refazer Wordle foi intuitiva, dado que já acompanhava o crescimento do jogo desde o seu lançamento, somada ao fato de que as versões disponíveis em português demandam uma janela de tempo "chata" entre uma tentativa e a outra. Assim, quis me desafiar a produzir o jogo com os conhecimentos adquiridos até aqui - HTML / CSS / Vanilla JS.
+Tome palavra! foi concebido como primeiro projeto para o bootcamp em Web Development da Ironhack/BR. A ideia de refazer Wordle foi intuitiva, dado que já acompanhava o crescimento do jogo desde o seu lançamento, somada ao fato de que as versões disponíveis em português demandam uma janela de tempo entre uma tentativa e a outra. Assim, quis me desafiar a produzir o jogo com os conhecimentos adquiridos até aqui - HTML / CSS / Vanilla JS.
 
 ## Como funciona o jogo
 
@@ -21,11 +21,11 @@ O código foi segmentado entre uma seção OOP para a criação das regras do jo
 # EN
 ## About the project
 
-Tome palavra! was conceived as my first project for the Web Development bootcamp at Ironhack/BR. The idea of recreate Wordle was intuitive, given that I already was following the game's growth since its releasement, added to the fact that different versions of the game available in Portuguese demand a "boring" window of time between a try and another. Hence, I wanted to challenge myself to develop the game with the knowledge achieved so far in the course - HTML / CSS / Vanilla JS.
+Tome palavra! was conceived as my first project for the Web Development bootcamp at Ironhack/BR. The idea of recreate Wordle was intuitive, given that I already was following the game's growth since its releasement, added to the fact that different versions of the game available in Portuguese demand a window of time between a try and another. Hence, I wanted to challenge myself to develop the game with the knowledge achieved so far in the course - HTML / CSS / Vanilla JS.
 
 ## How the game works
 
-The idea behind of Tome palavra! is simple: the game, during launch, defines a word that must be guessed. The round is composed by 6 tries, as in each one the player must insert the letters of a word in the assigned fields and click on "Tentar!" (or press Enter) to get a return from the game. The possible visual returns until the fifth round are: i) green if the letter exists in the word of the game and is in the right place; ii) yellow if the letter exists in the word of the game but is in the wrong place; iii) grey if the letter doesn´t exists in the word of the game. If the player suceeds in guessing the word, he'll receive a return from the game in form of an alert with "Congratulations!". If, arriving in the sitxh round, the player still doesn´t get to guess the right word, he'll receiva an alert informing the defeat and restarting the game with a new word/round.
+The idea behind of Tome palavra! is simple: the game, during launch, defines a word that must be guessed. The round is composed by 6 tries; in each one, the player must insert the letters of a word in the assigned fields and click on "Tentar!" (or press Enter) to get a return from the game. The possible visual returns until the fifth round are: i) green if the letter exists in the word of the game and is in the right place; ii) yellow if the letter exists in the word of the game but is in the wrong place; iii) grey if the letter doesn´t exists in the word of the game. If the player suceeds in guessing the word, he'll receive a return from the game in form of an alert with "Congratulations!". If, arriving in the sitxh round, the player still doesn´t get to guess the right word, he'll receiva an alert informing the defeat and restarting the game with a new word/round.
 
 ## How the code was done
 
