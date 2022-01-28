@@ -40,7 +40,7 @@ function restart(){
 
 game.init();
 
-console.log(game.getWord());
+console.log(`A palavra é: ${game.getWord().join("")}`);
 
 // Função de puxar o input, testar, mudar as cores, travar a row
 
@@ -51,7 +51,7 @@ function puxar (id){
 
     span.forEach((currentElement) => {arrayGuess.push(currentElement.value)}); // Passa para o array cada letra;
 
-    if (checar(arrayGuess) === true){
+    if (checar(arrayGuess) === true && game.palavraExiste(arrayGuess) === true){
 
     let cores = game.procurarPalavra(arrayGuess); // Compara no game.js a palavra e informa o retorno visual;
 
@@ -81,16 +81,18 @@ btnTestar1.addEventListener('click', (event) => {
     if (puxar (event.target.classList[0]) === true){ // Função mestre
     btnTestar1.setAttribute("class", "no-show"); // Desligar botão e chamar a próxima fila
     btnTestar2.classList.toggle ("no-show")
-    div2.classList.toggle ("no-show");}
-    else alert ("Erro - preencha todas as letras")
+    div2.classList.toggle ("no-show");
+    document.getElementById("input6").focus();}
+    else alert ("Erro")
 })
 
 btnTestar2.addEventListener('click', (event) => {
     if (puxar (event.target.classList[0]) === true){
     btnTestar2.setAttribute("class", "no-show");
     btnTestar3.classList.toggle ("no-show")
-    div3.classList.toggle ("no-show");}
-    else alert ("Erro - preencha todas as letras")
+    div3.classList.toggle ("no-show");
+    document.getElementById("input11").focus();}
+    else alert ("Erro")
 })
 
 btnTestar3.addEventListener('click', (event) => {
@@ -98,31 +100,33 @@ btnTestar3.addEventListener('click', (event) => {
     puxar (event.target.classList[0]);
     btnTestar3.setAttribute("class", "no-show");
     btnTestar4.classList.toggle ("no-show")
-    div4.classList.toggle ("no-show")}
-    else alert ("Erro - preencha todas as letras")
+    div4.classList.toggle ("no-show")
+    document.getElementById("input16").focus();}
+    else alert ("Erro")
 })
 
 btnTestar4.addEventListener('click', (event) => {
     if (puxar (event.target.classList[0]) === true){
     btnTestar4.setAttribute("class", "no-show");
     btnTestar5.classList.toggle ("no-show");
-    div5.classList.toggle ("no-show");}
-    else alert ("Erro - preencha todas as letras")
+    div5.classList.toggle ("no-show");
+    document.getElementById("input21").focus();}
+    else alert ("Erro")
 })
 
 btnTestar5.addEventListener('click', (event) => {
     if (puxar (event.target.classList[0]) === true){
     btnTestar5.setAttribute("class", "no-show");
     btnTestar6.classList.toggle ("no-show")
-    div6.classList.toggle ("no-show");}
-    else alert ("Erro - preencha todas as letras")
+    div6.classList.toggle ("no-show");
+    document.getElementById("input26").focus();}
+    else alert ("Erro")
 })
 
 btnTestar6.addEventListener('click', (event) => {
     if (puxar (event.target.classList[0]) === true){
-    btnTestar6.setAttribute("class", "no-show");
-    div6.classList.toggle ("no-show");}
-    else alert ("Erro - preencha todas as letras")
+    btnTestar6.setAttribute("class", "no-show");}
+    else alert ("Erro")
 })
 
 // Função - Só permitir letras + Focus
@@ -146,4 +150,27 @@ document.addEventListener('keydown', (event) =>{
       botaovisivel[0].click();
     }
   });
+
+  // Habilitar o Backspace
+
+document.addEventListener('keydown', (event) =>{
+    let element = document.activeElement
+
+
+    // if (event.key === 'Backspace') {
+    // event.preventDefault();
+    // element.value = "";
+    //   element.previousElementSibling.focus();
+    // // }
+
+
+    // if (event.key === 'ArrowLeft'){
+    //     element.previousElementSibling.focus()
+    // }
+
+    // if (event.key === 'ArrowRight'){
+    //     element.nextElementSibling.focus()
+    // }
+  })
+
 

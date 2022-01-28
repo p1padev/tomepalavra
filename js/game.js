@@ -26,6 +26,11 @@ class Game {
       return tentativas === 6 && !game.isWon(input)
     }
 
+    palavraExiste (arrayGuess){
+      if (this.database.indexOf(arrayGuess.join("")) != -1){
+     return true
+ } else {return false}}
+
     procurarPalavra (input) {
         const result = [];
         for (let i = 0; i < input.length; i++) {
