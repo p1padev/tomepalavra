@@ -7,7 +7,7 @@ class Game {
 
     init(){
         this.numero = this.gerarNumero(this.database.length);
-        this.palavra = this.database[this.numero].split("");
+        this.palavra = this.database[this.numero].toLowerCase().split("");
     }
 
     getWord(){
@@ -27,7 +27,7 @@ class Game {
     }
 
     palavraExiste (arrayGuess){
-      if (this.database.indexOf(arrayGuess.join("")) != -1){
+      if (this.database.indexOf(arrayGuess.join("").toUpperCase()) != -1){
      return true
  } else {return false}}
 
