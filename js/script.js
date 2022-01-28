@@ -133,10 +133,7 @@ btnTestar6.addEventListener('click', (event) => {
 
 function validate(arg) {
     let element = document.getElementById(arg);
-    element.value = element.value.replace(/[^A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ]+/, '');
-    if (element.value.length == 1){
-        element.nextElementSibling.focus();
-    }
+    element.value = element.value.replace(/[^A-Za-z]+/, '');
   }
 
 // Habilitar o enter
@@ -146,7 +143,6 @@ document.addEventListener('keydown', (event) =>{
         window.getComputedStyle(style).getPropertyValue('display') != 'none');
         
     if (event.key === 'Enter') {
-      // Trigger the button element with a click
       botaovisivel[0].click();
     }
   });
@@ -157,20 +153,20 @@ document.addEventListener('keydown', (event) =>{
     let element = document.activeElement
 
 
-    // if (event.key === 'Backspace') {
-    // event.preventDefault();
-    // element.value = "";
-    //   element.previousElementSibling.focus();
-    // // }
+    if (event.key === 'Backspace') {
+    event.preventDefault();
+    element.value = "";
+      element.previousElementSibling.focus();
+    }
 
 
-    // if (event.key === 'ArrowLeft'){
-    //     element.previousElementSibling.focus()
-    // }
+    if (event.key === 'ArrowLeft'){
+        element.previousElementSibling.focus()
+    }
 
-    // if (event.key === 'ArrowRight'){
-    //     element.nextElementSibling.focus()
-    // }
+    if (event.key === 'ArrowRight'){
+        element.nextElementSibling.focus()
+    }
   })
 
 
