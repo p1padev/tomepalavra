@@ -10,7 +10,7 @@
 
 Tome palavra! foi concebido como primeiro projeto para o bootcamp em Web Development da Ironhack/BR. A ideia de refazer Wordle foi intuitiva, dado que já acompanhava o crescimento do jogo desde o seu lançamento, somada ao fato de que as versões disponíveis em português demandam uma janela de tempo entre uma tentativa e a outra. Assim, quis me desafiar a produzir o jogo com os conhecimentos adquiridos até aqui - HTML / CSS / Vanilla JS.
 
-Agradecimento especial ao @gabtoschi por gentilmente retornar minhas dúvidas sobre o projeto dele [Letreco](https://www.gabtoschi.com/letreco/) e me permitindo usar a sua lista de palavras.
+Agradecimento especial ao [@gabtoschi](https://github.com/gabtoschi) por gentilmente retornar minhas dúvidas sobre o projeto dele [Letreco](https://www.gabtoschi.com/letreco/) e me permitindo usar a sua lista de palavras.
 
 ## Como funciona o jogo
 
@@ -29,7 +29,7 @@ Tome palavra! was conceived as my first project for the Web Development bootcamp
 
 The idea behind of Tome palavra! is simple: the game, during launch, defines a word that must be guessed. The round is composed by 6 tries; in each one, the player must insert the letters of a word in the assigned fields and click on "Tentar!" (or press Enter) to get a return from the game. The possible visual returns until the fifth round are: i) green if the letter exists in the word of the game and is in the right place; ii) yellow if the letter exists in the word of the game but is in the wrong place; iii) grey if the letter doesn´t exists in the word of the game. If the player suceeds in guessing the word, he'll receive a return from the game in form of an alert with "Congratulations!". If, arriving in the sitxh round, the player still doesn´t get to guess the right word, he'll receiva an alert informing the defeat and restarting the game with a new word/round.
 
-Special thanks to @gabtoschi for the answers about his project [Letreco](https://www.gabtoschi.com/letreco/) and his help by allowing me to use Letreco's list of words.
+Special thanks to [@gabtoschi](https://github.com/gabtoschi) for the answers about his project [Letreco](https://www.gabtoschi.com/letreco/) and his help by allowing me to use Letreco's list of words.
 
 ## How the code was done
 
